@@ -125,10 +125,10 @@
                         HorizontalAlignment="Stretch"
                         Orientation="Vertical" Margin="10,5,10,0">
                         <ComboBox x:Name="AccountsListSel" Header="Select the account" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" ItemTemplate="{StaticResource AccountSelectionData}" SelectionChanged="AccountsListSel_SelectionChanged"/>
-                        <TextBox x:Name="FName" Header="First Name" PlaceholderText="Jim" TextWrapping="Wrap"/>
-                        <TextBox x:Name="LName" Header="Last Name" PlaceholderText="Bob" TextWrapping="Wrap"/>
-                        <TextBox x:Name="CName" Header="Company Name" PlaceholderText="Holden" TextWrapping="Wrap"/>
-                        <TextBox x:Name="MobilePhone" Header="Mobile Phone" PlaceholderText="Jim" TextWrapping="Wrap"/>
+                        <TextBox x:Name="FName" Header="First Name" PlaceholderText="" TextWrapping="Wrap"/>
+                        <TextBox x:Name="LName" Header="Last Name" PlaceholderText="" TextWrapping="Wrap"/>
+                        <TextBox x:Name="CName" Header="Company Name" PlaceholderText="" TextWrapping="Wrap"/>
+                        <TextBox x:Name="MobilePhone" Header="Mobile Phone" PlaceholderText="" TextWrapping="Wrap"/>
 
                        
 

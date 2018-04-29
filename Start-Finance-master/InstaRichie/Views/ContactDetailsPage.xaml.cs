@@ -52,12 +52,12 @@ namespace StartFinance.Views
             this.InitializeComponent();
             NavigationCacheMode = Windows.UI.Xaml.Navigation.NavigationCacheMode.Enabled;
             /// Initializing a database
-          conn = new SQLite.Net.SQLiteConnection(new SQLite.Net.Platform.WinRT.SQLitePlatformWinRT(), path);
+            conn = new SQLite.Net.SQLiteConnection(new SQLite.Net.Platform.WinRT.SQLitePlatformWinRT(), path);
 
 
 
-        // Creating table
-        Results();
+            // Creating table
+            Results();
         }
 
         public void Results()
@@ -65,7 +65,7 @@ namespace StartFinance.Views
             // Creating table
             conn.CreateTable<Accounts>();
             var query = conn.Table<Accounts>();
-           // TransactionList.ItemsSource = query.ToList();
+            // TransactionList.ItemsSource = query.ToList();
             AccountsListSel.ItemsSource = query.ToList();
 
             conn.CreateTable<ContactDetails>();
@@ -78,60 +78,60 @@ namespace StartFinance.Views
         {
             string AccountSelection = ((Accounts)AccountsListSel.SelectedItem).AccountName;
 
-           
-          
-                // checks if account name is null
-                if (AccountSelection == "")
+
+
+            // checks if account name is null
+            if (AccountSelection == "")
+            {
+                MessageDialog dialog = new MessageDialog("Select an account", "Oops..!");
+                await dialog.ShowAsync();
+            }
+            else if (FName.Text.ToString() == "FirstName" || LName.Text.ToString() == "Name")
+            {
+                MessageDialog variableerror = new MessageDialog("You cannot use this name", "Oops..!");
+            }
+            else
+            {
+                // String ContactDetailAccounts = conn.Query<ContactDetails>("SELECT * FROM ContactDetails WHERE Account = " + AccountSelection).ToString();
+                string accountSel = ((Accounts)AccountsListSel.SelectedItem).AccountName;
+                List<ContactDetails> query1 = conn.Query<ContactDetails>("SELECT * FROM ContactDetails WHERE Account ='" + accountSel + "'");
+
+                if (query1.Count == 0)
                 {
-                    MessageDialog dialog = new MessageDialog("Select an account", "Oops..!");
-                    await dialog.ShowAsync();
-                }
-                else if (FName.Text.ToString() == "FirstName" || LName.Text.ToString() == "Name")
-                {
-                    MessageDialog variableerror = new MessageDialog("You cannot use this name", "Oops..!");
+
+                    conn.Insert(new ContactDetails()
+                    {
+                        FirstName = FName.Text,
+                        LastName = LName.Text,
+                        CompanyName = CName.Text,
+                        MobilePhone = MobilePhone.Text,
+                        Account = AccountSelection
+
+
+                        //InitialAmount = Convert.ToDouble(MoneyIn.Text),
+                        //OverDraft = Drafting()
+                    });
+                    Results();
                 }
                 else
                 {
-                    // String ContactDetailAccounts = conn.Query<ContactDetails>("SELECT * FROM ContactDetails WHERE Account = " + AccountSelection).ToString();
-                    string accountSel = ((Accounts)AccountsListSel.SelectedItem).AccountName;
-                    List<ContactDetails> query1 = conn.Query<ContactDetails>("SELECT * FROM ContactDetails WHERE Account ='" + accountSel +"'");
+                    List<ContactDetails> query2 = conn.Query<ContactDetails>("UPDATE ContactDetails SET Account = '" + accountSel + "',FirstName = '" + FName.Text + "',LastName = '" + LName.Text + "',CompanyName = '" + CName.Text + "',MobilePhone = '" + "' WHERE Account = '" + accountSel + "'");
 
-                    if (query1.Count == 0)
-                    {
+                    Results();
 
-                        conn.Insert(new ContactDetails()
-                        {
-                            FirstName = FName.Text,
-                            LastName = LName.Text,
-                            CompanyName = CName.Text,
-                            MobilePhone = MobilePhone.Text,
-                            Account = AccountSelection
-
-
-                            //InitialAmount = Convert.ToDouble(MoneyIn.Text),
-                            //OverDraft = Drafting()
-                        });
-                        Results();
-                    }
-                    else
-                    {
-                        List<ContactDetails> query2 = conn.Query<ContactDetails>("UPDATE ContactDetails SET Account = '" + accountSel + "',FirstName = '" + FName.Text + "',LastName = '" + LName.Text + "',CompanyName = '" + CName.Text + "',MobilePhone = '" + "' WHERE Account = '" + accountSel + "'");
-
-                        Results();
-
-                    }
                 }
-
             }
 
-
-              
-            
+        }
 
 
-        private async void  AccountsListSel_SelectionChanged(object sender, SelectionChangedEventArgs e)
-            {
-         
+
+
+
+
+        private void AccountsListSel_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
             string accountSel = "";
             try
             {
@@ -148,11 +148,11 @@ namespace StartFinance.Views
                 CName.Text = query1.ElementAt(0).CompanyName.ToString();
                 MobilePhone.Text = query1.ElementAt(0).MobilePhone.ToString();
 
-            
+
             }
-            catch(Exception ex) {
-               // MessageDialog ClearDialog = new MessageDialog(ex.ToString(), "Oops..!");
-               // await ClearDialog.ShowAsync();
+            catch
+            {
+
 
             }
         }
@@ -171,7 +171,7 @@ namespace StartFinance.Views
 
         private async void DeleteItem_Click(object sender, RoutedEventArgs e)
         {
-            MessageDialog ShowConf = new MessageDialog("Deleting contact details associated with this account?" , "Important");
+            MessageDialog ShowConf = new MessageDialog("Deleting contact details associated with this account?", "Important");
             ShowConf.Commands.Add(new UICommand("Yes, Delete")
             {
                 Id = 0
