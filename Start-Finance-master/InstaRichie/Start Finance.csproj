@@ -104,6 +104,7 @@
     </Compile>
     <Compile Include="Models\PersonalDetails.cs" />
     <Compile Include="Models\ShoppingList2.cs" />
+    <Compile Include="Models\ContactDetails.cs" />
     <Compile Include="Models\Accounts.cs" />
     <Compile Include="Models\Assets.cs" />
     <Compile Include="Models\Category.cs" />
@@ -118,6 +119,8 @@
     <Compile Include="ViewModels\SettingsPageViewModel.cs" />
     <Compile Include="Views\ShoppingList.xaml.cs">
       <DependentUpon>ShoppingList.xaml</DependentUpon>
+    <Compile Include="Views\ContactDetailsPage.xaml.cs">
+      <DependentUpon>ContactDetailsPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\AccountsPage.xaml.cs">
       <DependentUpon>AccountsPage.xaml</DependentUpon>
@@ -191,6 +194,7 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Page>
     <Page Include="Views\ShoppingList.xaml">
+    <Page Include="Views\ContactDetailsPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

@@ -128,6 +128,7 @@ namespace StartFinance.ViewModels
             Toto = sumProdQty;
             return Toto;
         }
+        
 
         public double PercentageScore()
         {
