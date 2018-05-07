@@ -49,5 +49,7 @@ namespace StartFinance.Models
 
 
 
+        [NotNull]
+        public string EndTime { get; set; }
     }
 }
