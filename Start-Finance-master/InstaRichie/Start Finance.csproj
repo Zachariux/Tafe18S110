@@ -102,9 +102,6 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Models\Appointments.cs" />
-    <Compile Include="Models\ContactDetails.cs" />
->>>>>>> origin/feat_ContactDetails
     <Compile Include="Models\Accounts.cs" />
     <Compile Include="Models\Assets.cs" />
     <Compile Include="Models\Category.cs" />
@@ -117,13 +114,6 @@
     <Compile Include="ViewModels\MainPageViewModel.cs" />
     <Compile Include="ViewModels\DetailPageViewModel.cs" />
     <Compile Include="ViewModels\SettingsPageViewModel.cs" />
-<<<<<<< HEAD
-    <Compile Include="Views\AppointmentInfoPage.xaml.cs">
-      <DependentUpon>AppointmentInfoPage.xaml</DependentUpon>
-=======
-      <DependentUpon>ContactDetailsPage.xaml</DependentUpon>
->>>>>>> origin/feat_ContactDetails
-    </Compile>
     <Compile Include="Views\AccountsPage.xaml.cs">
       <DependentUpon>AccountsPage.xaml</DependentUpon>
     </Compile>
@@ -191,12 +181,6 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Page>
-    <Page Include="Views\AppointmentInfoPage.xaml">
-    <Page Include="Views\ContactDetailsPage.xaml">
->>>>>>> origin/feat_ContactDetails
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
     </Page>
     <Page Include="Views\AccountsPage.xaml">
       <SubType>Designer</SubType>

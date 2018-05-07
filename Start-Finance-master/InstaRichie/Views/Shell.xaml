@@ -37,17 +37,7 @@
                                Text="Transactions" />
                 </StackPanel>
             </Controls:HamburgerButtonInfo>
-            <!--  ContactDetails button  -->
-            <Controls:HamburgerButtonInfo ClearHistory="True" PageType="views:ContactDetailsPage" 
-                                          AutomationProperties.Name="Jerry"
-                                          >
-                <StackPanel Orientation="Horizontal">
-                    <SymbolIcon Width="48" Height="48"
-                                Symbol="Phone" />
-                    <TextBlock Margin="12,0,0,0" VerticalAlignment="Center"
-                               Text="Contact Details" />
-                </StackPanel>
-            </Controls:HamburgerButtonInfo>
+
             <!--  Transaction button  -->
             <Controls:HamburgerButtonInfo ClearHistory="True" PageType="views:TransactionPage" 
                                           AutomationProperties.Name="Jerry"
@@ -57,18 +47,6 @@
                                 Symbol="Add" />
                     <TextBlock Margin="12,0,0,0" VerticalAlignment="Center"
                                Text="Add Transaction" />
-                </StackPanel>
-            </Controls:HamburgerButtonInfo>
-
-            <!--  Transaction button  -->
-            <Controls:HamburgerButtonInfo ClearHistory="True" PageType="views:AppointmentInfoPage" 
-                                          AutomationProperties.Name="Jerry"
-                                          >
-                <StackPanel Orientation="Horizontal">
-                    <SymbolIcon Width="48" Height="48"
-                                Symbol="Calendar" />
-                    <TextBlock Margin="12,0,0,0" VerticalAlignment="Center"
-                               Text="Appointments" />
                 </StackPanel>
             </Controls:HamburgerButtonInfo>
 
