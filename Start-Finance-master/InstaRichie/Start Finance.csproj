@@ -102,6 +102,7 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Models\PersonalDetails.cs" />
     <Compile Include="Models\Accounts.cs" />
     <Compile Include="Models\Assets.cs" />
     <Compile Include="Models\Category.cs" />
@@ -119,6 +120,9 @@
     </Compile>
     <Compile Include="Views\AssetsPage.xaml.cs">
       <DependentUpon>AssetsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PersonalInfo.xaml.cs">
+      <DependentUpon>PersonalInfo.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Busy.xaml.cs">
       <DependentUpon>Busy.xaml</DependentUpon>
@@ -187,6 +191,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\AssetsPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\PersonalInfo.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
