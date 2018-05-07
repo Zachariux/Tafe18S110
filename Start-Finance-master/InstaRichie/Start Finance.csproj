@@ -102,6 +102,9 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <!-- test
+  -->
+    
     <Compile Include="Models\Appointments.cs" />
     <Compile Include="Models\Accounts.cs" />
     <Compile Include="Models\Assets.cs" />

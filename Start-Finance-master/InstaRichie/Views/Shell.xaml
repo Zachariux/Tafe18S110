@@ -14,7 +14,7 @@
     <Controls:HamburgerMenu x:Name="MyHamburgerMenu">
 
         <Controls:HamburgerMenu.PrimaryButtons>
-            <!--  DashBoard button  -->
+            <!--  DashBoards button  -->
             <Controls:HamburgerButtonInfo ClearHistory="True" PageType="views:DashBoardPage" 
                                           AutomationProperties.Name="Jerry"
                                           >
