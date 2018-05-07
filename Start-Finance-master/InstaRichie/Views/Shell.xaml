@@ -62,6 +62,18 @@
 
 
 
+            <!--  Appointment Info button  -->
+            <Controls:HamburgerButtonInfo ClearHistory="True" PageType="views:AppointmentInfoPage" 
+                                          AutomationProperties.Name="Jerry"
+                                          >
+                <StackPanel Orientation="Horizontal">
+                    <SymbolIcon Width="48" Height="48"
+                                Symbol="Calendar" />
+                    <TextBlock Margin="12,0,0,0" VerticalAlignment="Center"
+                               Text="Appointments" />
+                </StackPanel>
+            </Controls:HamburgerButtonInfo>
+
             <!--  Personal Info button  -->
             <Controls:HamburgerButtonInfo ClearHistory="True" PageType="views:PersonalInfo" 
                                           AutomationProperties.Name="Jerry"

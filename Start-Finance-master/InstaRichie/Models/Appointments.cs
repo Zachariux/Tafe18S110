@@ -25,27 +25,28 @@ using SQLite.Net.Attributes;
 
 namespace StartFinance.Models
 {
-    public class ContactDetails
+    public class Appointments
     {
         [PrimaryKey, AutoIncrement]
         public int ID { get; set; }
 
-        [Unique]
+        [NotNull]
         public string Account { get; set; }
 
         [Unique]
-        public string FirstName { get; set; }
+        public string EventName { get; set; }
 
         [NotNull]
-        public string LastName { get; set; }
+        public string Location { get; set; }
 
         [NotNull]
-        public string CompanyName { get; set; }
+        public string EventDate { get; set; }
 
         [NotNull]
-        public string MobilePhone { get; set; }
+        public string StartTime { get; set; }
 
-
+        [NotNull]
+        public string EndTime { get; set; }
 
     }
 }
